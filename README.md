@@ -11,4 +11,5 @@ Only pre-requisite, JDK 1.6 and Maven.
 Execution
 
  a) mvn clean package
+ 
  b) mvn tomcat7:run
