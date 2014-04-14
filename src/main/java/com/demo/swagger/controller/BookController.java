@@ -25,9 +25,9 @@ public class BookController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
     @ApiOperation(value = "Retrieves a book based on their id")
-    @ApiErrors(value = {@ApiError(code=404, reason = "No book corresponding to the id was found")})
+    @ApiErrors(value = {@ApiError(code = 404, reason = "No book corresponding to the id was found")})
     @ResponseBody
-    public ResponseEntity<String> showJson(@ApiParam(name = "id" , required = true, value = "The id of the book that needs to be retrieved")@PathVariable("id") Long id) {
+    public ResponseEntity<String> showJson(@ApiParam(name = "id", required = true, value = "The id of the book that needs to be retrieved") @PathVariable("id") Long id) {
         Book book = bookDao.findBook(id);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
@@ -36,6 +36,4 @@ public class BookController {
         }
         return new ResponseEntity<String>(book.toJson(), headers, HttpStatus.OK);
     }
-
-
 }
