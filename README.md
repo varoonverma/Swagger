@@ -1,4 +1,4 @@
-Simplest Swagger-ui implementation
+Simplest Swagger-ui Example
 ===================================
 
 Swagger Tutorial
